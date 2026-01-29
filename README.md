@@ -1,4 +1,4 @@
-**SQL Injection Vulnerability Analysis and Exploitation Using SQLMap**
+**Database Exploitation Using SQL Injection Techniques — SQL injection**
 
 🧾 Project Description
 This project demonstrates a practical analysis of SQL Injection (SQLi), a critical web application vulnerability that allows attackers to manipulate backend database queries. The project was carried out in a controlled lab environment using a vulnerable website and Kali Linux. SQLMap was used to detect injectable parameters, enumerate databases, extract tables and columns, and demonstrate the impact of SQL injection attacks.
