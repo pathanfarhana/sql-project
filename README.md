@@ -1,62 +1,133 @@
-**Database Exploitation Using SQL Injection Techniques — SQL injection**
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?lines=SQL+Injection+Attack+Simulation;Web+Application+Penetration+Testing;Offensive+Security+Project&font=Fira+Code&center=true&width=900&height=45&color=FF3333&vCenter=true&pause=1000" />
+</p>
 
-🧾 Project Description
-This project demonstrates a practical analysis of SQL Injection (SQLi), a critical web application vulnerability that allows attackers to manipulate backend database queries. The project was carried out in a controlled lab environment using a vulnerable website and Kali Linux. SQLMap was used to detect injectable parameters, enumerate databases, extract tables and columns, and demonstrate the impact of SQL injection attacks.
+<h1 align="center">💉 SQL Injection (SQLi) – Practical Attack & Analysis</h1>
 
-🛠 Tools & Technologies
+<p align="center">
+  <img src="https://img.shields.io/badge/Attack-SQL%20Injection-critical?style=for-the-badge&logo=hackthebox" />
+  <img src="https://img.shields.io/badge/Category-Web%20Pentesting-red?style=for-the-badge&logo=owasp" />
+  <img src="https://img.shields.io/badge/Environment-Lab%20Based-blue?style=for-the-badge&logo=kalilinux" />
+</p>
 
-Kali Linux
+---
 
-SQLMap
+## 🧾 Project Overview
 
-Vulnerable Web Application
+This project demonstrates a **real-world simulation of SQL Injection (SQLi)** — one of the most critical and widely exploited vulnerabilities in modern web applications.
 
-Web Browser
+The assessment was performed in a **controlled lab environment** using a deliberately vulnerable web application.  
+The objective was to **identify**, **exploit**, and **analyze** SQL Injection flaws using industry-standard offensive security tools.
 
-🎯 Objectives
+> ⚠️ **Disclaimer**  
+> This project is intended **strictly for educational and ethical security research purposes**.
 
-To understand how SQL Injection vulnerabilities occur
+---
 
-To detect vulnerable input fields in web applications
+## 🛠 Tools & Technologies
 
-To exploit SQL Injection using SQLMap
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=linux" />
+</p>
 
-To analyze the security risks caused by SQL Injection
+| Tool | Purpose |
+|------|--------|
+| 🐉 **Kali Linux** | Penetration testing environment |
+| 💉 **SQLMap** | Automated SQL injection exploitation |
+| 🌐 **Vulnerable Web Application** | Target for attack simulation |
+| 🌍 **Web Browser** | Manual testing & validation |
 
-🔍 Methodology
+---
 
-Identified a vulnerable URL parameter by injecting a single quote (') to trigger an SQL error.
+## 🎯 Objectives
 
-Used SQLMap to test the target and confirm SQL Injection vulnerability.
+- Understand how **SQL Injection vulnerabilities** occur
+- Identify **injectable input parameters**
+- Exploit SQL Injection using **SQLMap**
+- Enumerate databases, tables, and sensitive data
+- Analyze **security impact and risk**
+- Learn **defensive mitigation techniques**
 
-Enumerated available databases using --dbs.
+---
 
-Extracted tables and columns from the target database.
+## 🔍 Methodology
 
-Dumped sensitive data from selected tables.
+### 1️⃣ Vulnerability Identification
+- Tested URL parameters using a single quote (`'`)
+- Observed database error messages indicating SQL Injection
 
-Documented all findings and security impacts.
+### 2️⃣ SQL Injection Confirmation
+- Used SQLMap to validate injection points
+- Confirmed backend database interaction
 
-⚠ Impact of SQL Injection
+### 3️⃣ Database Enumeration
+```bash
+sqlmap -u "http://target.com/page.php?id=1" --dbs
+````
 
-Unauthorized access to sensitive data
+### 4️⃣ Table & Column Extraction
 
-Ability to modify or delete database records
+```bash
+sqlmap -u "http://target.com/page.php?id=1" -D database_name --tables
+sqlmap -u "http://target.com/page.php?id=1" -D database_name -T table_name --columns
+```
 
-Risk of authentication bypass
+### 5️⃣ Data Dumping
 
-Potential full compromise of the web application
+```bash
+sqlmap -u "http://target.com/page.php?id=1" -D database_name -T table_name --dump
+```
 
-🔐 Prevention Techniques
+### 6️⃣ Documentation
 
-Use parameterized queries (prepared statements)
+* Recorded vulnerable parameters
+* Documented extracted data
+* Analyzed attack impact
 
-Validate and sanitize all user inputs
+---
 
-Use stored procedures
+## ⚠️ Impact of SQL Injection
 
-Hide database error messages from users
+🚨 Successful SQL Injection attacks can result in:
 
-📁 Project Outcome
+* Unauthorized access to sensitive user data
+* Modification or deletion of database records
+* Authentication bypass
+* Exposure of credentials and PII
+* Full compromise of the web application
 
-This project provided hands-on experience in identifying and exploiting SQL Injection vulnerabilities and understanding their real-world impact on web application security. It strengthened my knowledge of penetration testing and secure coding practices.
+---
+
+## 🔐 Prevention & Mitigation Techniques
+
+🛡️ To defend against SQL Injection:
+
+* Use **Parameterized Queries / Prepared Statements**
+* Validate and sanitize all user input
+* Use stored procedures
+* Disable verbose database error messages
+* Apply least privilege to database users
+* Perform regular security testing
+
+---
+
+## 📁 Project Outcome
+
+✅ Gained hands-on experience exploiting SQL Injection
+✅ Understood real-world attacker techniques
+✅ Improved practical web penetration testing skills
+✅ Strengthened secure coding and defensive knowledge
+
+This project significantly enhanced my understanding of **web application security** and **offensive testing methodologies**.
+
+---
+
+## ⚖️ Legal & Ethical Disclaimer
+
+This project was conducted **only in a lab environment** on intentionally vulnerable applications.
+Unauthorized testing on live systems is illegal and unethical.
+
+---
+
+⭐ **If this project helped you, consider starring the repository!**
+🛡️ *Learn attacks to build stronger defenses.*
